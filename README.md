@@ -8,7 +8,7 @@ $ Design $
 
 $ Timeline $
 
-<table width="100%">
+<table style="width: 100%">
   <thead>
     <tr>
       <th></th>
@@ -19,8 +19,18 @@ $ Timeline $
   <tbody>
     <tr>
       <td>1</td>
-      <td>Saturday, 13th May</td>
+      <td>13th - 15th May</td>
       <td>Idea and Design Wireframe</td>
     </tr>
+    <!-- <tr>
+      <td>2</td>
+      <td>16th - 18th May</td>
+      <td>Implementing a layout using HTML, SCSS and JavaScript</td>
+    </tr> -->
+    <!-- <tr>
+      <td>2</td>
+      <td>16th - 17th May</td>
+      <td>Implementing a layout using HTML, SCSS and JavaScript</td>
+    </tr> -->
   </tbody>
 </table>
