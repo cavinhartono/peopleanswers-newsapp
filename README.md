@@ -4,9 +4,9 @@
 
 ---
 
-$ Design $
+$$ Design $$
 
-$ Timeline $
+$$ Timeline $$
 
 <table style="width: 100%">
   <thead>
