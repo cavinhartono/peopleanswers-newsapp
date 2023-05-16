@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostsController;
-use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,10 +21,10 @@ Route::controller(DashboardController::class)->group(function () {
   Route::get('/travels')->name('dashboard.travel');
   Route::get('/opinion')->name('dashboard.opinion');
   Route::get('/must-reads')->name('dashboard.mustRead');
-  Route::get('/{name}', 'profile')->name('dashboard.index');
+  Route::get('/{name}', 'profile')->name('dashboard.index')->middleware('auth');
 });
 
-Route::controller(PostsController::class)->group(function () {
+Route::middleware('auth')->controller(PostsController::class)->group(function () {
   Route::get('/posts', 'index')->name('posts.index');
   Route::get('/post/{name}/{title}', 'view')->name('posts.view');
   Route::get('/post/create', 'create')->name('posts.create');
