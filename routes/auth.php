@@ -9,10 +9,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
   Route::controller(AuthController::class)->group(function () {
-    Route::get('/login', 'login')->name('login');
-    Route::post('/login', 'check')->name('auth.check');
-    Route::get('/register', 'register')->name('register');
-    Route::post('/register', 'store')->name('auth.store');
+    Route::get('/auth', 'auth')->name('auth');
+    Route::post('/auth', 'check')->name('auth.check');
+    Route::post('/auth', 'store')->name('auth.store');
   });
 
   Route::get('verify-email', [EmailVerificationPromptController::class, '__invoke'])

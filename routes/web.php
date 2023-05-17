@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(DashboardController::class)->group(function () {
   Route::get('/', 'index')->name('home');
-  Route::get('/styles')->name('dashboard.style');
-  Route::get('/travels')->name('dashboard.travel');
-  Route::get('/opinion')->name('dashboard.opinion');
-  Route::get('/must-reads')->name('dashboard.mustRead');
+  Route::get('/styles', 'styles')->name('dashboard.style');
+  Route::get('/travels', 'travels')->name('dashboard.travel');
+  Route::get('/opinion', 'opinion')->name('dashboard.opinion');
+  Route::get('/must-reads', 'mustReads')->name('dashboard.mustRead');
   Route::get('/{name}', 'profile')->name('dashboard.index')->middleware('auth');
 });
 
