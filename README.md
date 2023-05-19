@@ -1,4 +1,4 @@
-### Laravel, Vue and SCSS
+### Laravel, Vue and TailwindCSS
 
 ## Peopleanswers
 
@@ -24,13 +24,7 @@ $$ Timeline $$
     </tr>
     <!-- <tr>
       <td>2</td>
-      <td>16th - 18th May</td>
-      <td>Implementing a layout using HTML, SCSS and JavaScript</td>
-    </tr> -->
-    <!-- <tr>
-      <td>2</td>
-      <td>16th - 17th May</td>
+      <td>16th - 21th May</td>
       <td>Implementing a layout using HTML, SCSS and JavaScript</td>
     </tr> -->
   </tbody>
-</table>

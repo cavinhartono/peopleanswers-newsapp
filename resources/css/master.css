@@ -1,0 +1,39 @@
+:root {
+    --reguler: 18px;
+    --medium: 24px;
+    --large: 32px;
+    --white-100: #fff;
+    --white-200: #f7f7f7;
+    --black-100: #222;
+    --black-200: #222222bf;
+    --black-300: #2222221a;
+    --black-400: #2c3333;
+    --green-100: #e7f6f2;
+    --green-200: #a5c9ca;
+    --green-300: #395b64;
+    --blue-100: #dfe3ee;
+    --blue-200: #aac4ff;
+    --blue-300: #3b5998;
+    --blue-400: #8fbdd3;
+    --bx-primary: -8px -8px 45px rgba(255, 255, 255, 1),
+        8px 8px 45px rgba(0, 0, 0, 0.1);
+    --bx-secondary: 0px 8px 45px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: var(--white-200);
+    color: var(--black-100);
+}
+
+svg {
+    width: inherit;
+    height: inherit;
+    color: inherit;
+}
