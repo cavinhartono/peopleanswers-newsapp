@@ -10,6 +10,15 @@
     <!-- Fonts -->
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+        a {
+            color: inherit;
+            text-decoration-color: inherit;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
     <!-- Scripts -->
@@ -18,7 +27,7 @@
     @inertiaHead
 </head>
 
-<body class="font-sans antialiased bg-white-500">
+<body class="font-sans antialiased bg-white-500 text-black-500">
     @inertia
 </body>
 

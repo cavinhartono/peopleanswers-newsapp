@@ -2,7 +2,7 @@
 import { Link, Head } from "@inertiajs/vue3";
 import MainNavLayout from "@/Layouts/MainNavLayout.vue";
 import CreatePostBox from "@/components/CreatePostBox.vue";
-import Post from "@/components/Post.vue";
+import Post from "@/Components/PostView.vue.js";
 
 import Camera from "vue-material-design-icons/Camera.vue";
 import Pen from "vue-material-design-icons/Pen.vue";

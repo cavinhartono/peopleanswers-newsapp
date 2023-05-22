@@ -4,23 +4,22 @@ import Info from "@/Components/InfoPost.vue";
 
 defineProps({
     src: String,
-    title: String,
-    subtitle: String,
     category: String,
-    createdby: String,
+    title: String,
+    createdBy: String,
     createdAt: String,
 });
 </script>
 
 <template>
-    <div class="w-full p-4 flex items-center">
-        <div class="img w-full">
-            <img :src="src" class="" />
+    <div class="w-full p-4 flex gap-6 items-center">
+        <div class="img w-max h-max">
+            <img :src="src" class="w-[50px] h-[50px]" />
         </div>
         <div>
             <label class="text-lowercase">{{ category }}</label>
-            <Title>{{ title }}</Title>
-            <Info></Info>
+            <Title class="pt-1 pb-2">{{ title }}</Title>
+            <Info :name="createdBy" :datetime="createdAt" />
         </div>
     </div>
 </template>
