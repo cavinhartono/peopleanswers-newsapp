@@ -1,11 +1,11 @@
 <script setup>
 import Header from "@/Components/Header.vue";
-import PostView from "@/Components/PostView.vue";
+import Homepage from "@/Components/Homepage.vue";
 </script>
 
 <template>
-    <div class="container px-10 py-6">
+    <div class="container mx-auto">
         <Header />
-        <PostView />
+        <Homepage />
     </div>
 </template>

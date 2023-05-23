@@ -4,7 +4,7 @@ import Title from "./Title.vue";
 </script>
 
 <template>
-    <header class="absolute top-0 left-0 w-full px-10 py-6">
+    <header class="relative w-full px-10 py-6">
         <div class="w-full flex justify-between items-center">
             <menu class="menu">
                 <span class="icon w-8 h-8">

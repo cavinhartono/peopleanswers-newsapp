@@ -10,6 +10,11 @@ defineProps({
 
 <template>
     <Subtitle>
-        By <Link :href="name">{{ name }}</Link> - {{ datetime }}
+        By
+        <Link :href="name.toLowerCase()" class="hover:underline">
+            {{ name }}
+        </Link>
+        -
+        {{ datetime }}
     </Subtitle>
 </template>
