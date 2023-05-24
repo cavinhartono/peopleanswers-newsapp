@@ -32,6 +32,11 @@ import { Link, Head } from "@inertiajs/inertia-vue3";
                     </div>
                 </div>
             </li>
+            <ul class="w-full flex gap-y-4">
+                <li class="flex gap-4 justify-between items-center">
+                    <Post />
+                </li>
+            </ul>
         </ul>
     </div>
 </template>
