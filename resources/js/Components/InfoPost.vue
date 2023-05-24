@@ -11,7 +11,7 @@ defineProps({
 <template>
     <Subtitle>
         By
-        <Link :href="name.toLowerCase()" class="hover:underline">
+        <Link :href="name" class="hover:underline">
             {{ name }}
         </Link>
         -
