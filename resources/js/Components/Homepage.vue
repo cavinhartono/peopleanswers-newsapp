@@ -34,6 +34,17 @@ import { Link, Head } from "@inertiajs/inertia-vue3";
             </li>
             <ul class="w-full flex gap-y-4">
                 <li class="flex gap-4 justify-between items-center">
+                    <Post
+                        filename="@/Components/Assets/Images/img1.jpg"
+                        title="Bagaimana Hari ini?"
+                        createdBy="Bapak Kau"
+                        createdAt="Monday, 5 Juni 2023"
+                    />
+                </li>
+                <li class="flex gap-4 justify-between items-center">
+                    <Post />
+                </li>
+                <li class="flex gap-4 justify-between items-center">
                     <Post />
                 </li>
             </ul>

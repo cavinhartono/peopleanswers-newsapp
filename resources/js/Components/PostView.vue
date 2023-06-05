@@ -3,7 +3,7 @@ import Title from "@/Components/Title.vue";
 import Info from "@/Components/InfoPost.vue";
 
 defineProps({
-    src: String,
+    filename: String,
     category: String,
     title: String,
     createdBy: String,
@@ -14,7 +14,7 @@ defineProps({
 <template>
     <div class="w-full p-4 flex gap-6 items-center">
         <div class="img w-max h-max">
-            <img :src="src" class="w-[50px] h-[50px]" />
+            <img :src="filename" :alt="title" class="w-[50px] h-[50px]" />
         </div>
         <div>
             <label class="text-lowercase">{{ category }}</label>
