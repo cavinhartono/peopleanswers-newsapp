@@ -19,7 +19,9 @@ import Title from "./Title.vue";
             </div>
         </div>
         <nav class="my-4 w-full border-y border-white-700">
-            <ul class="w-full flex justify-center items-center gap-16 py-6">
+            <ul
+                class="w-full flex justify-center items-center text-xl gap-16 py-6"
+            >
                 <li class="font-bold">
                     <Link href="/" class="link">features</Link>
                 </li>

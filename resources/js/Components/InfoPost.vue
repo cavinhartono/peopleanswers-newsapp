@@ -1,5 +1,4 @@
 <script setup>
-import Subtitle from "@/Components/Subtitle.vue";
 import { Link } from "@inertiajs/inertia-vue3";
 
 defineProps({
@@ -9,12 +8,13 @@ defineProps({
 </script>
 
 <template>
-    <Subtitle>
+    <h2 class="text-sm text-black-500 opacity-75">
+        <slot />
         By
         <Link :href="name" class="hover:underline">
             {{ name }}
         </Link>
         -
         {{ datetime }}
-    </Subtitle>
+    </h2>
 </template>
