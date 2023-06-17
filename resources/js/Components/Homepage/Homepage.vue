@@ -34,67 +34,55 @@ import { Link, Head } from "@inertiajs/inertia-vue3";
                 </div>
             </li>
             <ul class="my-4 w-full flex gap-x-4">
-                <li>
-                    <div class="relative w-full h-[250px]">
-                        <img
-                            src="@/Components/Assets/Images/img1.jpg"
-                            class="w-full h-full object-cover"
+                <li class="relative w-full">
+                    <img
+                        src="@/Components/Assets/Images/img1.jpg"
+                        class="w-full h-[250px] object-cover"
+                    />
+                    <div class="w-full my-4">
+                        <label class="lowercase text-black-500"> Style </label>
+                        <Title class="pt-1 pb-2 text-black-500 w-full">
+                            How to Make Sure 2023 Is Your Best Year Yet
+                        </Title>
+                        <Info
+                            class="text-black-500"
+                            name="John Doe"
+                            datetime="Wednesday, 24 May 2023"
                         />
-                        <div class="w-full my-4">
-                            <label class="lowercase text-black-500">
-                                Style
-                            </label>
-                            <Title class="pt-1 pb-2 text-black-500 w-full">
-                                How to Make Sure 2023 Is Your Best Year Yet
-                            </Title>
-                            <Info
-                                class="text-black-500"
-                                name="John Doe"
-                                datetime="Wednesday, 24 May 2023"
-                            />
-                        </div>
                     </div>
                 </li>
-                <li>
-                    <div class="relative w-full h-[250px]">
-                        <img
-                            src="@/Components/Assets/Images/img1.jpg"
-                            class="w-full h-full object-cover"
+                <li class="relative w-full">
+                    <img
+                        src="@/Components/Assets/Images/img1.jpg"
+                        class="w-full h-[250px] object-cover"
+                    />
+                    <div class="w-full my-4">
+                        <label class="lowercase text-black-500"> Style </label>
+                        <Title class="pt-1 pb-2 text-black-500 w-full">
+                            How to Make Sure 2023 Is Your Best Year Yet
+                        </Title>
+                        <Info
+                            class="text-black-500"
+                            name="John Doe"
+                            datetime="Wednesday, 24 May 2023"
                         />
-                        <div class="w-full my-4">
-                            <label class="lowercase text-black-500">
-                                Style
-                            </label>
-                            <Title class="pt-1 pb-2 text-black-500 w-full">
-                                How to Make Sure 2023 Is Your Best Year Yet
-                            </Title>
-                            <Info
-                                class="text-black-500"
-                                name="John Doe"
-                                datetime="Wednesday, 24 May 2023"
-                            />
-                        </div>
                     </div>
                 </li>
-                <li>
-                    <div class="relative w-full h-[250px]">
-                        <img
-                            src="@/Components/Assets/Images/img1.jpg"
-                            class="w-full h-full object-cover"
+                <li class="relative w-full">
+                    <img
+                        src="@/Components/Assets/Images/img1.jpg"
+                        class="w-full h-[250px] object-cover"
+                    />
+                    <div class="w-full my-4">
+                        <label class="lowercase text-black-500"> Style </label>
+                        <Title class="pt-1 pb-2 text-black-500 w-full">
+                            How to Make Sure 2023 Is Your Best Year Yet
+                        </Title>
+                        <Info
+                            class="text-black-500"
+                            name="John Doe"
+                            datetime="Wednesday, 24 May 2023"
                         />
-                        <div class="w-full my-4">
-                            <label class="lowercase text-black-500">
-                                Style
-                            </label>
-                            <Title class="pt-1 pb-2 text-black-500 w-full">
-                                How to Make Sure 2023 Is Your Best Year Yet
-                            </Title>
-                            <Info
-                                class="text-black-500"
-                                name="John Doe"
-                                datetime="Wednesday, 24 May 2023"
-                            />
-                        </div>
                     </div>
                 </li>
             </ul>

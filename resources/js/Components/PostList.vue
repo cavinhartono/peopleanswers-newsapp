@@ -14,7 +14,7 @@ defineProps({
 <template>
     <div class="w-full p-4">
         <div class="img w-max h-max">
-            <img :alt="title" :src="filename" class="w-full h-[300px]" />
+            <slot />
         </div>
         <div>
             <label class="text-lowercase">{{ category }}</label>
