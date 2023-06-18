@@ -3,7 +3,6 @@ import Title from "@/Components/Title.vue";
 import Info from "@/Components/InfoPost.vue";
 
 defineProps({
-    filename: String,
     category: String,
     title: String,
     createdBy: String,
@@ -12,7 +11,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="w-full p-4">
+    <div class="w-full p-4 flex items-center gap-8">
         <div class="img w-max h-max">
             <slot />
         </div>

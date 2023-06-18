@@ -1,5 +1,6 @@
 <script setup>
 import Header from "@/Components/Header.vue";
+import Footer from "@/Components/Footer.vue";
 import Homepage from "@/Components/Homepage/Homepage.vue";
 import MustReads from "@/Components/Homepage/MustRead.vue";
 </script>
@@ -9,5 +10,6 @@ import MustReads from "@/Components/Homepage/MustRead.vue";
         <Header />
         <Homepage />
         <MustReads />
+        <Footer />
     </div>
 </template>

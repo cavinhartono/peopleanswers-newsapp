@@ -10,9 +10,9 @@ import { Link } from "@inertiajs/inertia-vue3";
             <label>must-reads</label>
             <i class="ri-arrow-right-up-line"></i>
         </h2>
-        <div class="w-full">
-            <ul class="flex justify-between gap-8">
-                <li class="w-[500px] max-h-full">
+        <div class="w-full my-4">
+            <ul class="w-full flex gap-8">
+                <li class="w-full max-h-full">
                     <div class="w-full h-full">
                         <div class="relative w-full h-full">
                             <img
@@ -39,6 +39,64 @@ import { Link } from "@inertiajs/inertia-vue3";
                         </div>
                     </div>
                 </li>
+                <ul class="relative w-full">
+                    <li class="py-4 border-b-2 border-black-200">
+                        <PostList
+                            category="Travel"
+                            title="Keindahan di Kota Garut"
+                            createdBy="Kevin John"
+                            createdAt="Sabtu, 18 Juni 2023"
+                        >
+                            <img
+                                alt="title"
+                                src="@/Components/Assets/Images/img1.jpg"
+                                class="w-full h-[100px]"
+                            />
+                        </PostList>
+                    </li>
+                    <li class="py-4 border-b-2 border-black-200">
+                        <PostList
+                            category="Travel"
+                            title="Keindahan di Kota Garut"
+                            createdBy="Kevin John"
+                            createdAt="Sabtu, 18 Juni 2023"
+                        >
+                            <img
+                                alt="title"
+                                src="@/Components/Assets/Images/img1.jpg"
+                                class="w-full h-[100px]"
+                            />
+                        </PostList>
+                    </li>
+                    <li class="py-4 border-b-2 border-black-200">
+                        <PostList
+                            category="Travel"
+                            title="Keindahan di Kota Garut"
+                            createdBy="Kevin John"
+                            createdAt="Sabtu, 18 Juni 2023"
+                        >
+                            <img
+                                alt="title"
+                                src="@/Components/Assets/Images/img1.jpg"
+                                class="w-full h-[100px]"
+                            />
+                        </PostList>
+                    </li>
+                    <li class="py-4 border-b-2 border-black-200">
+                        <PostList
+                            category="Travel"
+                            title="Keindahan di Kota Garut"
+                            createdBy="Kevin John"
+                            createdAt="Sabtu, 18 Juni 2023"
+                        >
+                            <img
+                                alt="title"
+                                src="@/Components/Assets/Images/img1.jpg"
+                                class="w-full h-[100px]"
+                            />
+                        </PostList>
+                    </li>
+                </ul>
             </ul>
         </div>
     </div>
