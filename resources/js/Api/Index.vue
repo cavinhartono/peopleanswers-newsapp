@@ -4,5 +4,5 @@ const endpoint =
 
 fetch(endpoint)
     .then((article) => article.json())
-    .then((result) => result.article);
+    .then((result) => console.log(result.article));
 </script>

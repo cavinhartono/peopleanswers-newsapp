@@ -6,7 +6,10 @@ import Title from "./Title.vue";
 <template>
     <header class="relative w-full px-10 py-6">
         <div class="w-full flex justify-between items-center">
-            <menu class="menu">
+            <menu
+                class="menu z-20"
+                onclick="document.querySelector('#nav').classList.toggle('translate-x-[0%]')"
+            >
                 <span class="icon w-8 h-8">
                     <i class="ri-menu-fill"></i>
                 </span>
@@ -37,4 +40,8 @@ import Title from "./Title.vue";
             </ul>
         </nav>
     </header>
+    <nav
+        class="fixed top-0 left-0 w-[400px] h-screen bg-black-500 text-white-500 transform translate-x-[-100%] transition z-10"
+        id="nav"
+    ></nav>
 </template>
