@@ -2,6 +2,21 @@
 import Title from "@/Components/Title.vue";
 import Info from "@/Components/InfoPost.vue";
 import { Link, Head } from "@inertiajs/inertia-vue3";
+
+const endpoint =
+    "https://newsapi.org/v2/top-headlines?country=id&apiKey=efb8274e78c24138ab578fb98d173181";
+
+fetch(endpoint)
+    .then((articles) => articles.json())
+    .then((result) => {
+        result.articles.map((item) => {
+            const createdBy = item.author;
+            const createdAt = item.publishedAt;
+            const title = item.title;
+            const url = item.url;
+            const source = item.source.name;
+        });
+    });
 </script>
 
 <template>
