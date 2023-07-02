@@ -1,28 +1,36 @@
-<script setup>
+<script>
 import Title from "@/Components/Title.vue";
 import Info from "@/Components/InfoPost.vue";
 import { Link, Head } from "@inertiajs/inertia-vue3";
 
-let createdBy = "",
-    createdAt = "",
-    title = "",
-    url = "",
-    source = "";
-
-const endpoint =
-    "https://newsapi.org/v2/top-headlines?country=id&apiKey=efb8274e78c24138ab578fb98d173181";
-
-fetch(endpoint)
-    .then((articles) => articles.json())
-    .then((result) => {
-        result.articles.map((item) => {
-            createdBy = item.author;
-            createdAt = item.publishedAt;
-            title = item.title;
-            url = item.url;
-            source = item.source.name;
-        });
-    });
+export default {
+    data() {
+        return { headlines: [] };
+    },
+    setup() {
+        return {
+            Info,
+            Title,
+        };
+    },
+    mounted() {
+        this.load();
+        console.log(this.headlines);
+    },
+    methods: {
+        load() {
+            fetch(
+                "https://newsapi.org/v2/top-headlines?country=id&apiKey=efb8274e78c24138ab578fb98d173181"
+            )
+                .then((articles) => articles.json())
+                .then((result) => {
+                    result.articles.map((item) => {
+                        this.headlines = { item };
+                    });
+                });
+        },
+    },
+};
 </script>
 
 <template>
@@ -40,35 +48,41 @@ fetch(endpoint)
                             class="absolute bottom-0 left-0 pl-6 pb-6 w-full before: bg-gradient-to-t from-black-500 to-transparent"
                         >
                             <label class="lowercase text-white-500">
-                                Style
+                                {{ headlines[1].source.name }}
                             </label>
                             <Title class="pt-1 pb-2 text-white-500 w-[400px]">
-                                How to Make Sure 2023 Is Your Best Year Yet
+                                {{ headlines[1].title }}
                             </Title>
                             <Info
                                 class="text-white-500"
-                                name="John Doe"
-                                datetime="Wednesday, 24 May 2023"
+                                :name="headlines[1].author"
+                                :datetime="headlines[1].publishedAt"
                             />
                         </div>
                     </div>
                 </div>
             </li>
             <ul class="my-4 w-full flex gap-x-4">
-                <li class="relative w-full">
+                <li
+                    class="relative w-full"
+                    v-for="headline in headlines"
+                    :key="headline.source.id"
+                >
                     <img
                         src="@/Components/Assets/Images/img1.jpg"
                         class="w-full h-[250px] object-cover"
                     />
                     <div class="w-full my-4">
-                        <label class="lowercase text-black-500"> Style </label>
+                        <label class="lowercase text-black-500">
+                            {{ headline.source.name }}
+                        </label>
                         <Title class="pt-1 pb-2 text-black-500 w-full">
-                            How to Make Sure 2023 Is Your Best Year Yet
+                            {{ headline.title }}
                         </Title>
                         <Info
                             class="text-black-500"
-                            name="John Doe"
-                            datetime="Wednesday, 24 May 2023"
+                            :name="headline.author"
+                            :datetime="headline.publishedAt"
                         />
                     </div>
                 </li>
