@@ -7,11 +7,9 @@ export default {
     data() {
         return { headlines: [] };
     },
-    setup() {
-        return {
-            Info,
-            Title,
-        };
+    components: {
+        Info,
+        Title,
     },
     mounted() {
         this.load();
@@ -48,15 +46,15 @@ export default {
                             class="absolute bottom-0 left-0 pl-6 pb-6 w-full before: bg-gradient-to-t from-black-500 to-transparent"
                         >
                             <label class="lowercase text-white-500">
-                                {{ headlines[1].source.name }}
+                                style
                             </label>
                             <Title class="pt-1 pb-2 text-white-500 w-[400px]">
-                                {{ headlines[1].title }}
+                                Selamat Datang di Indonesia dan Jangan lupa
                             </Title>
                             <Info
                                 class="text-white-500"
-                                :name="headlines[1].author"
-                                :datetime="headlines[1].publishedAt"
+                                name="CNN Indonesia"
+                                datetime="Sabtu, 8 Juli 2023"
                             />
                         </div>
                     </div>
