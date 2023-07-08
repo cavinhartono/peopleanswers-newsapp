@@ -24,6 +24,7 @@ export default {
                 .then((result) => {
                     result.articles.map((item) => {
                         this.headlines = { item };
+                        console.log(item);
                     });
                 });
         },
@@ -64,7 +65,7 @@ export default {
                 <li
                     class="relative w-full"
                     v-for="headline in headlines"
-                    :key="headline.source.id"
+                    :key="headline.content"
                 >
                     <img
                         src="@/Components/Assets/Images/img1.jpg"
