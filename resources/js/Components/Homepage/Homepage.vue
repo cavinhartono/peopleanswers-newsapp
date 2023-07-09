@@ -4,9 +4,9 @@ import Info from "@/Components/InfoPost.vue";
 import { Link, Head } from "@inertiajs/inertia-vue3";
 import { ref, onMounted } from "vue";
 
-const headlines = ref([]);
+let headlines = ref(null);
 
-const fetchDataPosts = async () => {
+function fetchDataPosts() {
     fetch(
         "https://newsapi.org/v2/top-headlines?country=id&apiKey=efb8274e78c24138ab578fb98d173181"
     )
@@ -14,12 +14,14 @@ const fetchDataPosts = async () => {
         .then((result) => {
             result.articles.map((item) => {
                 headlines.value = { item };
-                console.log(item);
             });
         });
-};
+}
 
-onMounted(() => fetchDataPosts());
+onMounted(() => {
+    fetchDataPosts();
+    console.log(headlines);
+});
 </script>
 
 <template>
