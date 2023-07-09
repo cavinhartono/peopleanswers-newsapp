@@ -1,35 +1,25 @@
-<script>
+<script setup>
 import Title from "@/Components/Title.vue";
 import Info from "@/Components/InfoPost.vue";
 import { Link, Head } from "@inertiajs/inertia-vue3";
+import { ref, onMounted } from "vue";
 
-export default {
-    data() {
-        return { headlines: [] };
-    },
-    components: {
-        Info,
-        Title,
-    },
-    mounted() {
-        this.load();
-        console.log(this.headlines);
-    },
-    methods: {
-        load() {
-            fetch(
-                "https://newsapi.org/v2/top-headlines?country=id&apiKey=efb8274e78c24138ab578fb98d173181"
-            )
-                .then((articles) => articles.json())
-                .then((result) => {
-                    result.articles.map((item) => {
-                        this.headlines = { item };
-                        console.log(item);
-                    });
-                });
-        },
-    },
+const headlines = ref([]);
+
+const fetchDataPosts = async () => {
+    fetch(
+        "https://newsapi.org/v2/top-headlines?country=id&apiKey=efb8274e78c24138ab578fb98d173181"
+    )
+        .then((articles) => articles.json())
+        .then((result) => {
+            result.articles.map((item) => {
+                headlines.value = { item };
+                console.log(item);
+            });
+        });
 };
+
+onMounted(() => fetchDataPosts());
 </script>
 
 <template>
@@ -65,7 +55,7 @@ export default {
                 <li
                     class="relative w-full"
                     v-for="headline in headlines"
-                    :key="headline.content"
+                    :key="headline.publishedAt"
                 >
                     <img
                         src="@/Components/Assets/Images/img1.jpg"
