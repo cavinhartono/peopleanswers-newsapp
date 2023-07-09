@@ -69,9 +69,9 @@ onMounted(() => fetchDataPosts());
                             :createdAt="headline.publishedAt"
                         >
                             <img
-                                alt="title"
+                                :alt="headline.title"
                                 src="@/Components/Assets/Images/img1.jpg"
-                                class="w-full h-[100px]"
+                                class="w-full max-h-[100px] object-cover"
                             />
                         </PostList>
                     </li>

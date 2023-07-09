@@ -53,7 +53,7 @@ onMounted(() => fetchDataPosts());
             <ul class="my-4 w-full flex gap-x-4">
                 <li
                     class="relative w-full"
-                    v-for="(headline, index) in headlines.splice(0, 3)"
+                    v-for="(headline, index) in headlines.splice(4, 3)"
                     :key="index"
                 >
                     <img

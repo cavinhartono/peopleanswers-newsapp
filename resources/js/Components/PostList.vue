@@ -17,7 +17,7 @@ defineProps({
         </div>
         <div>
             <label class="text-lowercase">{{ category }}</label>
-            <Title class="pt-1 pb-2">{{ title }}</Title>
+            <Title class="pt-1 pb-2 max-w-[500px]">{{ title }}</Title>
             <Info :name="createdBy" :datetime="createdAt" />
         </div>
     </div>
