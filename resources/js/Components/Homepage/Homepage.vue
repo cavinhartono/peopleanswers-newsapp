@@ -4,24 +4,17 @@ import Info from "@/Components/InfoPost.vue";
 import { Link, Head } from "@inertiajs/inertia-vue3";
 import { ref, onMounted } from "vue";
 
-let headlines = ref(null);
+let headlines = ref([]);
 
 function fetchDataPosts() {
     fetch(
         "https://newsapi.org/v2/top-headlines?country=id&apiKey=efb8274e78c24138ab578fb98d173181"
     )
-        .then((articles) => articles.json())
-        .then((result) => {
-            result.articles.map((item) => {
-                headlines.value = { item };
-            });
-        });
+        .then((response) => response.json())
+        .then((articles) => (headlines = articles.articles));
 }
 
-onMounted(() => {
-    fetchDataPosts();
-    console.log(headlines);
-});
+onMounted(() => fetchDataPosts());
 </script>
 
 <template>
@@ -56,8 +49,8 @@ onMounted(() => {
             <ul class="my-4 w-full flex gap-x-4">
                 <li
                     class="relative w-full"
-                    v-for="headline in headlines"
-                    :key="headline.publishedAt"
+                    v-for="(headline, index) in headlines.splice(0, 3)"
+                    :key="index"
                 >
                     <img
                         src="@/Components/Assets/Images/img1.jpg"
