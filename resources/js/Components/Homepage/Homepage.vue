@@ -21,7 +21,11 @@ onMounted(() => fetchDataPosts());
     <Head title="Homepage" />
     <div class="relative px-10">
         <ul class="w-full">
-            <li class="w-full h-[500px]">
+            <li
+                class="w-full h-[500px]"
+                v-for="(headline, index) in headlines.slice(0, 1)"
+                :key="index"
+            >
                 <div class="w-full h-full">
                     <div class="relative w-full h-full">
                         <img
@@ -32,15 +36,15 @@ onMounted(() => fetchDataPosts());
                             class="absolute bottom-0 left-0 pl-6 pb-6 w-full before: bg-gradient-to-t from-black-500 to-transparent"
                         >
                             <label class="lowercase text-white-500">
-                                style
+                                {{ headline.source.name }}
                             </label>
-                            <Title class="pt-1 pb-2 text-white-500 w-[400px]">
-                                Selamat Datang di Indonesia dan Jangan lupa
+                            <Title class="pt-1 pb-2 text-white-500 w-[600px]">
+                                {{ headline.title }}
                             </Title>
                             <Info
                                 class="text-white-500"
-                                name="CNN Indonesia"
-                                datetime="Sabtu, 8 Juli 2023"
+                                :name="headline.author"
+                                :datetime="headline.publishedAt"
                             />
                         </div>
                     </div>

@@ -1,7 +1,20 @@
 <script setup>
 import Title from "@/Components/Title.vue";
 import PostList from "@/Components/PostList.vue";
+import { ref, onMounted } from "vue";
 import { Link } from "@inertiajs/inertia-vue3";
+
+let headlines = ref([]);
+
+function fetchDataPosts() {
+    fetch(
+        "https://newsapi.org/v2/top-headlines?country=id&apiKey=efb8274e78c24138ab578fb98d173181"
+    )
+        .then((response) => response.json())
+        .then((articles) => (headlines = articles.articles));
+}
+
+onMounted(() => fetchDataPosts());
 </script>
 
 <template>
@@ -12,7 +25,11 @@ import { Link } from "@inertiajs/inertia-vue3";
         </h2>
         <div class="w-full my-4">
             <ul class="w-full flex gap-8">
-                <li class="w-full max-h-full">
+                <li
+                    class="w-full max-h-full"
+                    v-for="(headline, index) in headlines.splice(0, 1)"
+                    :key="index"
+                >
                     <div class="w-full h-full">
                         <div class="relative w-full h-full">
                             <img
@@ -23,71 +40,33 @@ import { Link } from "@inertiajs/inertia-vue3";
                                 class="absolute bottom-0 left-0 pl-6 pb-6 w-full before: bg-gradient-to-t from-black-500 to-transparent"
                             >
                                 <label class="lowercase text-white-500">
-                                    Style
+                                    {{ headline.source.name }}
                                 </label>
                                 <Title
                                     class="pt-1 pb-2 text-white-500 w-[400px]"
                                 >
-                                    How to Make Sure 2023 Is Your Best Year Yet
+                                    {{ headline.title }}
                                 </Title>
                                 <Info
                                     class="text-white-500"
-                                    name="John Doe"
-                                    datetime="Wednesday, 24 May 2023"
+                                    :name="headline.author"
+                                    :datetime="headline.publishedAt"
                                 />
                             </div>
                         </div>
                     </div>
                 </li>
                 <ul class="relative w-full">
-                    <li class="py-4 border-b-2 border-black-200">
+                    <li
+                        class="py-4 border-b-2 border-black-200"
+                        v-for="(headline, index) in headlines.splice(0, 4)"
+                        :key="index"
+                    >
                         <PostList
-                            category="Travel"
-                            title="Keindahan di Kota Garut"
-                            createdBy="Kevin John"
-                            createdAt="Sabtu, 18 Juni 2023"
-                        >
-                            <img
-                                alt="title"
-                                src="@/Components/Assets/Images/img1.jpg"
-                                class="w-full h-[100px]"
-                            />
-                        </PostList>
-                    </li>
-                    <li class="py-4 border-b-2 border-black-200">
-                        <PostList
-                            category="Travel"
-                            title="Keindahan di Kota Garut"
-                            createdBy="Kevin John"
-                            createdAt="Sabtu, 18 Juni 2023"
-                        >
-                            <img
-                                alt="title"
-                                src="@/Components/Assets/Images/img1.jpg"
-                                class="w-full h-[100px]"
-                            />
-                        </PostList>
-                    </li>
-                    <li class="py-4 border-b-2 border-black-200">
-                        <PostList
-                            category="Travel"
-                            title="Keindahan di Kota Garut"
-                            createdBy="Kevin John"
-                            createdAt="Sabtu, 18 Juni 2023"
-                        >
-                            <img
-                                alt="title"
-                                src="@/Components/Assets/Images/img1.jpg"
-                                class="w-full h-[100px]"
-                            />
-                        </PostList>
-                    </li>
-                    <li class="py-4 border-b-2 border-black-200">
-                        <PostList
-                            category="Travel"
-                            title="Keindahan di Kota Garut"
-                            createdBy="Kevin John"
-                            createdAt="Sabtu, 18 Juni 2023"
+                            :category="headline.source.name"
+                            :title="headline.title"
+                            :createdBy="headline.author"
+                            :createdAt="headline.publishedAt"
                         >
                             <img
                                 alt="title"
