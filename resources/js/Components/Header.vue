@@ -41,7 +41,7 @@ import Title from "./Title.vue";
         </nav>
     </header>
     <nav
-        class="fixed top-0 left-0 w-[400px] h-screen bg-black-500 text-white-500 transform translate-x-[-100%] transition z-10"
+        class="fixed top-0 left-0 w-[400px] max-h-screen bg-black-500 text-white-500 transform translate-x-[-100%] transition z-10"
         id="nav"
     ></nav>
 </template>
