@@ -2,19 +2,8 @@
 import Title from "@/Components/Title.vue";
 import Info from "@/Components/InfoPost.vue";
 import { Link, Head } from "@inertiajs/inertia-vue3";
-import { ref, onMounted } from "vue";
 
-let headlines = ref([]);
-
-function fetchDataPosts() {
-    fetch(
-        "https://newsapi.org/v2/top-headlines?country=id&apiKey=efb8274e78c24138ab578fb98d173181"
-    )
-        .then((response) => response.json())
-        .then((articles) => (headlines = articles.articles));
-}
-
-onMounted(() => fetchDataPosts());
+defineProps({ headlines: Object });
 </script>
 
 <template>
