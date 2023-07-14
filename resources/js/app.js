@@ -13,7 +13,8 @@ const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
 
 const appName =
-    window.document.getElementsByTagName("title")[0]?.innerText || "Laravel";
+    window.document.getElementsByTagName("title")[0]?.innerText ||
+    "Peopleanswers";
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
